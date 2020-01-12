@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>
+    Students Details
+  </ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="stacked">Student Name </ion-label>
+        <ion-input [(ngModel)]="studentData.name" placeholder="Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Class </ion-label>
+        <ion-input [(ngModel)]="studentData.class" placeholder="Student Class"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Obtained Marks</ion-label>
+        <ion-input [(ngModel)]="studentData.mark" placeholder="Mark"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="addStudentDetails()">Add Student</ion-button>
+
+  <ion-list>
+    <ion-item button *ngFor="let student of students" [routerLink]="['/', 'students', student.studId]">
+      <ion-label>
+        <h2>Student Name :: {{ student.name }}</h2>
+        <p>Student Class :: {{ student.class }}</p>
+        <p>Student Marks :: {{ student.mark }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

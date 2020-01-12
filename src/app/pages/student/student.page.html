@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Student</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+  <div *ngIf="student">
+    <ion-item>
+      <ion-label position="stacked">Student Name </ion-label>
+      <ion-input [(ngModel)]="student.name" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Class </ion-label>
+      <ion-input [(ngModel)]="student.class" placeholder="Student Class"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Obtained Marks</ion-label>
+      <ion-input [(ngModel)]="student.mark" placeholder="Mark"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="updateStudentData()">Update Student</ion-button>
+   </div>
+</ion-content>
